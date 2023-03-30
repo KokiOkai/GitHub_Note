@@ -19,4 +19,4 @@ $ git clone <git web URL>
 ```
 
 #### リポジトリのリンク取得方法
-<img src="https://user-images.githubusercontent.com/105481222/228757235-0040642c-9975-4950-b0d6-ca1088985202.jpg" width="0%">
+<img src="https://user-images.githubusercontent.com/105481222/228757235-0040642c-9975-4950-b0d6-ca1088985202.jpg" width="80%">
