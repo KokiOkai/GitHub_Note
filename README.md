@@ -39,7 +39,7 @@ $ git clone https://github.com/amanhirohisa/JavaVariableExtractor.git
 2. コマンドで実行
 ```
 // コマンド「-v」：コマンドラインに処理内容を表示する
-$ sudo java -jar JavaVariableExtractor.jar -v <git-repo-folder>
+$ sudo java -jar JavaVariableExtractor.jar -v <java-file | java-file-directory>
 ```
 
 
