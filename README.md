@@ -10,6 +10,7 @@ GitHub作業用のメモ
 - [研究用ツール](#研究用ツール)
   - [JavaVariableExtractor](#JavaVariableExtractor)
     - [基本的な使い方](#基本的な使い方) 
+    - [ファイルへの書き出し方法](#ファイルへの書き出し方法)
   - [RefactoringMiner](#RefactoringMiner) 
 
 
@@ -37,9 +38,18 @@ $ git clone https://github.com/amanhirohisa/JavaVariableExtractor.git
 #### 基本的な使い方
 1. リポジトリに公開されているjavaファイルをまとめた「jarファイル」を、Visual Studio Codeにダウンロードする。<br>
 2. コマンドで実行
+
 ```
 // コマンド「-v」：コマンドラインに処理内容を表示する
 $ sudo java -jar JavaVariableExtractor.jar -v <java-file | java-file-directory>
+```
+
+#### ファイルへの書き出し方法
+// コマンド
+$ sudo java -jar JavaVariableExtractor.jar dubbo &> <保存先の指定・保存するファイル名・識別子>
+
+// 例
+$ sudo java -jar JavaVariableExtractor.jar dubbo &> ./output.txt
 ```
 
 
