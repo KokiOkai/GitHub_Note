@@ -7,11 +7,14 @@ GitHub作業用のメモ
   - [clone](#clone)
     - [基本的な操作](#基本的な操作)
     - [リポジトリのリンク取得方法](#リポジトリのリンク取得方法)
+- [Linux コマンド](#Linux-コマンド)
+  - [cd](#cd)  
 - [研究用ツール](#研究用ツール)
   - [JavaVariableExtractor](#JavaVariableExtractor)
     - [基本的な使い方](#基本的な使い方) 
     - [ファイルへの書き出し方法](#ファイルへの書き出し方法)
   - [RefactoringMiner](#RefactoringMiner) 
+    - [基本的な使い方](#基本的な使い方) 
 
 
 ## git コマンド
@@ -33,6 +36,15 @@ $ git clone https://github.com/amanhirohisa/JavaVariableExtractor.git
 <img src="https://user-images.githubusercontent.com/105481222/228757235-0040642c-9975-4950-b0d6-ca1088985202.jpg" width="80%">
 
 
+## Linux コマンド
+### cd
+| コマンド | 説明 |
+| :--- | :--- |
+| cd ~/ | ホームディレクトリに移動する |
+| cd ../ | 1つ上の階層のファイルに移動する |
+| cd ../../ | 2つ上の階層のファイルに移動する |
+
+
 ## 研究用ツール
 ### JavaVariableExtractor
 #### 基本的な使い方
@@ -52,9 +64,9 @@ UNIXコマンドによって、標準出力をファイルに書き出す。
 
 | コマンド | 使い方 | 説明 |
 | :--- | :--- | :--- |
-| > | (コマンド) > (ファイル) | コマンドの結果(標準出力)をファイルに書き出す |
-| 2> | (コマンド) 2> (ファイル) | コマンドの結果(標準エラー出力)をファイルに書き出す |
-| &> | (コマンド) &> (ファイル) | コマンドの結果(標準出力、標準エラー出力)をファイルに書き出す |
+| > | (コマンド) > (ファイル) | コマンドの結果（標準出力）をファイルに書き出す |
+| 2> | (コマンド) 2> (ファイル) | コマンドの結果（標準エラー出力）をファイルに書き出す |
+| &> | (コマンド) &> (ファイル) | コマンドの結果（標準出力、標準エラー出力）をファイルに書き出す |
 
 ```
 // コマンド
@@ -64,5 +76,12 @@ $ sudo java -jar JavaVariableExtractor.jar dubbo &> <保存先の指定・保存
 $ sudo java -jar JavaVariableExtractor.jar dubbo &> ./output.txt
 ```
 
-
 ### RefactoringMiner
+#### 基本的な使い方
+1. ホームディレクトリからzipファイルを解凍した場所まで指定または移動して、sudoでコマンドを実行。<br>
+2. コマンド「-a <git-repo-folder> <branch> -json <path-to-json-file>」を実行。<br>
+
+```
+// 例
+$ sudo ./RefactoringMiner/build/distributions/RefactoringMiner-2.3.2/bin/RefactoringMiner -a dubbo 3.2 -json ./test.json
+```
