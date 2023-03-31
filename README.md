@@ -11,10 +11,10 @@ GitHub作業用のメモ
   - [cd](#cd)  
 - [研究用ツール](#研究用ツール)
   - [JavaVariableExtractor](#JavaVariableExtractor)
-    - [基本的な使い方（JavaVariableExtractor）](#基本的な使い方（JavaVariableExtractor）) 
+    - [基本的な使い方（JavaVariableExtractor）](#基本的な使い方JavaVariableExtractor) 
     - [ファイルへの書き出し方法](#ファイルへの書き出し方法)
   - [RefactoringMiner](#RefactoringMiner) 
-    - [基本的な使い方（RefactoringMiner）](#基本的な使い方（RefactoringMiner）) 
+    - [基本的な使い方（RefactoringMiner）](#基本的な使い方RefactoringMiner) 
 
 
 ## git コマンド
