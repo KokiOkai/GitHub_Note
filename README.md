@@ -49,7 +49,7 @@ $ git clone https://github.com/amanhirohisa/JavaVariableExtractor.git
 ### JavaVariableExtractor
 #### 基本的な使い方（JavaVariableExtractor）
 1. リポジトリに公開されているjavaファイルをまとめた「jarファイル」を、Visual Studio Codeにダウンロードする。<br>
-2. コマンドで実行
+2. コマンドを実行
 
 ```
 // コマンド「-v」：コマンドラインに処理内容を表示する
