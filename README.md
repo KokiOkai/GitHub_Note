@@ -79,7 +79,7 @@ $ sudo java -jar JavaVariableExtractor.jar dubbo &> ./output.txt
 ### RefactoringMiner
 #### 基本的な使い方 2
 1. ホームディレクトリからzipファイルを解凍した場所まで指定または移動して、sudoでコマンドを実行。<br>
-2. コマンド「-a <git-repo-folder> <branch> -json <path-to-json-file>」を実行。
+2. コマンド「`-a <git-repo-folder> <branch> -json <path-to-json-file>`」を実行。
 
 ```
 // 例
