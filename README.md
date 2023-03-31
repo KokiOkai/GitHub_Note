@@ -42,6 +42,9 @@ $ git clone https://github.com/amanhirohisa/JavaVariableExtractor.git
 ```
 // コマンド「-v」：コマンドラインに処理内容を表示する
 $ sudo java -jar JavaVariableExtractor.jar -v <java-file | java-file-directory>
+
+// 例
+$ sudo java -jar JavaVariableExtractor.jar -v dubbo
 ```
 
 #### ファイルへの書き出し方法
