@@ -27,7 +27,7 @@ GitHub作業用のメモ
 gitコマンドで`clone`を使用することで、リポジトリをローカルのディレクトリにクローンしてくることができる。
 
 #### 基本的な操作（git clone）
-```
+```Unix Assembly
 // コマンド
 $ git clone <git web URL>
 
