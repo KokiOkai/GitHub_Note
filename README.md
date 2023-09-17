@@ -24,7 +24,7 @@ GitHub作業用のメモ
 
 ## git コマンド
 ### clone
-gitコマンドでcloneを使用することで、リポジトリをローカルのディレクトリにクローンしてくることができる。
+gitコマンドで`clone`を使用することで、リポジトリをローカルのディレクトリにクローンしてくることができる。
 
 #### 基本的な操作（git clone）
 ```
@@ -41,7 +41,7 @@ $ git clone https://github.com/amanhirohisa/JavaVariableExtractor.git
 <img src="https://user-images.githubusercontent.com/105481222/228757235-0040642c-9975-4950-b0d6-ca1088985202.jpg" width="80%">
 
 ### log
-gitコマンドでlogを使用することで、過去のコミット履歴を表示することができる。
+gitコマンドで`log`を使用することで、過去のコミット履歴を表示することができる。
 
 #### 基本的な操作（git log）
 コミット履歴を表示したいリポジトリに移動して実行する。
@@ -133,7 +133,7 @@ $ sudo java -jar JavaVariableExtractor.jar dubbo &> ./output.txt
 
 ### RefactoringMiner
 #### 基本的な使い方（RefactoringMiner）
-1. ホームディレクトリからzipファイルを解凍した場所まで指定または移動して、sudoでコマンドを実行。<br>
+1. ホームディレクトリからzipファイルを解凍した場所まで指定または移動して、`sudo`でコマンドを実行。<br>
 2. コマンド「`-a <git-repo-folder> <branch> -json <path-to-json-file>`」を実行。
 
 ```
