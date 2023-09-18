@@ -125,7 +125,7 @@ UNIXコマンドによって、標準出力をファイルに書き出す。
 
 ```
 // コマンド
-$ sudo java -jar JavaVariableExtractor.jar dubbo &> <保存先の指定・保存するファイル名・識別子>
+$ sudo java -jar JavaVariableExtractor.jar <java-file | java-file-directory> &> <保存先の指定・保存するファイル名・識別子>
 
 // 例
 $ sudo java -jar JavaVariableExtractor.jar dubbo &> ./output.txt
