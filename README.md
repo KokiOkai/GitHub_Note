@@ -22,7 +22,10 @@ GitHub作業用のメモ
     - [ファイルへの書き出し方法](#ファイルへの書き出し方法)
   - [RefactoringMiner](#RefactoringMiner)
     - [リンク（RefactoringMiner）](#リンクRefactoringMiner)
-    - [基本的な使い方（RefactoringMiner）](#基本的な使い方RefactoringMiner) 
+    - [基本的な使い方（RefactoringMiner）](#基本的な使い方RefactoringMiner)
+  - [git-stein](#git-stein)
+    - [リンク（git-stein）](#リンクgit-stein)
+    - [基本的な使い方（git-stein）](#基本的な使い方git-stein) 
 
 
 ## git コマンド
@@ -159,3 +162,9 @@ GitHubリンク：[https://github.com/tsantalis/RefactoringMiner](https://github
 // 例
 $ sudo ./RefactoringMiner/build/distributions/RefactoringMiner-2.3.2/bin/RefactoringMiner -a dubbo 3.2 -json ./test.json
 ```
+
+### git-stein
+#### リンク（git-stein）
+GitHubリンク：[https://github.com/sh5i/git-stein](https://github.com/sh5i/git-stein)
+
+#### 基本的な使い方（git-stein）
