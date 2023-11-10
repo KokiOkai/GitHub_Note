@@ -168,3 +168,21 @@ $ sudo ./RefactoringMiner/build/distributions/RefactoringMiner-2.3.2/bin/Refacto
 GitHubリンク：[https://github.com/sh5i/git-stein](https://github.com/sh5i/git-stein)
 
 #### 基本的な使い方（git-stein）
+1. クローンしてからbuildする必要がある。
+
+```
+// プロジェクト「git-stein」をcloneする
+$ git clone https://github.com/sh5i/git-stein.git
+// プロジェクト「git-stein」に移動
+$ cd git-stein
+// 実行に必要なファイル作成
+$ ./gradlew executableJar
+// jarファイルを実行しやすい場所にコピーする
+$ cp /path/to/git-stein/build/libs/git-stein.jar
+```
+
+2. 「git-stein」のコマンドは、*General Option*と*Subcommand*を指定して実行する。
+
+```css
+java -jar git-stein.jar [General Option] <repo> [Subcommand]
+```
