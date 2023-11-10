@@ -25,7 +25,8 @@ GitHub作業用のメモ
     - [基本的な使い方（RefactoringMiner）](#基本的な使い方RefactoringMiner)
   - [git-stein](#git-stein)
     - [リンク（git-stein）](#リンクgit-stein)
-    - [基本的な使い方（git-stein）](#基本的な使い方git-stein) 
+    - [基本的な使い方（git-stein）](#基本的な使い方git-stein)
+    - [メソッド抽出方法（git-stein）](#メソッド抽出方法git-stein)
 
 
 ## git コマンド
@@ -183,6 +184,20 @@ $ cp /path/to/git-stein/build/libs/git-stein.jar
 
 2. 「git-stein」のコマンドは、*General Option*と*Subcommand*を指定して実行する。
 
-```css
+```
 java -jar git-stein.jar [General Option] <repo> [Subcommand]
+```
+
+#### メソッド抽出方法（git-stein）
+- *General Option*で'-o'コマンドを使用して、変換後のリポジトリのパスを指定して生成する。
+- '<path/to/target-repo>'は変換後のリポジトリのパス、'<path/to/source-repo>'は変換したい元リポジトリである。
+- 注意点として、'<path/to/target-repo>'に指定する変換後のフォルダを事前に作成する必要はない。
+- *Subcommand*で'@historage-jdt'を指定して、メソッド抽出のコマンド'--no-classes --no-fields'を使用する。
+
+```
+// コマンド
+$ java -jar git-stein.jar -o <path/to/target-repo> <path/to/source-repo> @historage-jdt --no-classes --no-fields
+
+// 例
+$ java -jar git-stein.jar -o ./Java-Snake-Game_git-stein ./Java-Snake-Game @historage-jdt --no-classes --no-fields
 ```
