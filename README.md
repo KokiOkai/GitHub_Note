@@ -19,7 +19,8 @@ GitHub作業用のメモ
   - [JavaVariableExtractor](#JavaVariableExtractor)
     - [基本的な使い方（JavaVariableExtractor）](#基本的な使い方JavaVariableExtractor) 
     - [ファイルへの書き出し方法](#ファイルへの書き出し方法)
-  - [RefactoringMiner](#RefactoringMiner) 
+  - [RefactoringMiner](#RefactoringMiner)
+    - [リンク（RefactoringMiner）](#リンクRefactoringMiner)
     - [基本的な使い方（RefactoringMiner）](#基本的な使い方RefactoringMiner) 
 
 
@@ -143,6 +144,9 @@ $ sudo java -jar JavaVariableExtractor.jar dubbo &> ./output.txt
 ```
 
 ### RefactoringMiner
+#### リンク（RefactoringMiner）
+GitHubリンク：[https://github.com/tsantalis/RefactoringMiner](https://github.com/tsantalis/RefactoringMiner)
+
 #### 基本的な使い方（RefactoringMiner）
 1. ホームディレクトリからzipファイルを解凍した場所まで指定または移動して、`sudo`でコマンドを実行。<br>
 2. コマンド「`-a <git-repo-folder> <branch> -json <path-to-json-file>`」を実行。
