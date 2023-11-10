@@ -182,17 +182,17 @@ $ ./gradlew executableJar
 $ cp /path/to/git-stein/build/libs/git-stein.jar
 ```
 
-2. 「git-stein」のコマンドは、*General Option*と*Subcommand*を指定して実行する。
+2. 「git-stein」のコマンドは、**General Option**と**Subcommand**を指定して実行する。
 
 ```
 java -jar git-stein.jar [General Option] <repo> [Subcommand]
 ```
 
 #### メソッド抽出方法（git-stein）
-- *General Option*で'-o'コマンドを使用して、変換後のリポジトリのパスを指定して生成する。
-- '<path/to/target-repo>'は変換後のリポジトリのパス、'<path/to/source-repo>'は変換したい元リポジトリである。
-- 注意点として、'<path/to/target-repo>'に指定する変換後のフォルダを事前に作成する必要はない。
-- *Subcommand*で'@historage-jdt'を指定して、メソッド抽出のコマンド'--no-classes --no-fields'を使用する。
+- **General Option**で`-o`コマンドを使用して、変換後のリポジトリのパスを指定して生成する。
+- `<path/to/target-repo>`は変換後のリポジトリのパス、`<path/to/source-repo>`は変換したい元リポジトリである。
+- 注意点として、`<path/to/target-repo>`に指定する変換後のフォルダを事前に作成する必要はない。
+- **Subcommand**で'@historage-jdt'を指定して、メソッド抽出のコマンド`--no-classes --no-fields`を使用する。
 
 ```
 // コマンド
