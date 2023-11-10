@@ -17,6 +17,7 @@ GitHub作業用のメモ
   - [テキスト処理](#テキスト処理)
 - [研究用ツール](#研究用ツール)
   - [JavaVariableExtractor](#JavaVariableExtractor)
+    - [リンク（JavaVariableExtractor）](#リンクJavaVariableExtractor)
     - [基本的な使い方（JavaVariableExtractor）](#基本的な使い方JavaVariableExtractor) 
     - [ファイルへの書き出し方法](#ファイルへの書き出し方法)
   - [RefactoringMiner](#RefactoringMiner)
@@ -114,6 +115,9 @@ $ cd dubbo
 
 ## 研究用ツール
 ### JavaVariableExtractor
+#### リンク（JavaVariableExtractor）
+GitHubリンク：[https://github.com/amanhirohisa/JavaVariableExtractor](https://github.com/amanhirohisa/JavaVariableExtractor)
+
 #### 基本的な使い方（JavaVariableExtractor）
 1. リポジトリに公開されているjavaファイルをまとめた「jarファイル」を、Visual Studio Codeにダウンロードする。<br>
 2. コマンドを実行
