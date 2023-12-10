@@ -193,7 +193,7 @@ $ java -jar git-stein.jar [General Option] <repo> [Subcommand]
 $ sudo apt-get install universal-ctags
 ```
 
-4. Visual Studio Code拡張機能のインストール
+4. Visual Studio Code拡張機能をインストールする。<br>
   Visual Studio Codeを開き、`Ctrl + P（Windows/Linux）`を押してコマンドパレットを開く。<br>
   次にコマンド`ext install ctags`を入力して、拡張機能「Ctags Support」を検索・インストールする。
 
