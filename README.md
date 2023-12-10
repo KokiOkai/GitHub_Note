@@ -185,19 +185,28 @@ $ cp /path/to/git-stein/build/libs/git-stein.jar
 2. 「git-stein」のコマンドは、**General Option**と**Subcommand**を指定して実行する。
 
 ```
-java -jar git-stein.jar [General Option] <repo> [Subcommand]
+$ java -jar git-stein.jar [General Option] <repo> [Subcommand]
 ```
+
+3. **Subcommand**で`@historage`を使用するために、**Universal Ctags**をインストールする。
+```
+$ sudo apt-get install universal-ctags
+```
+
+4. Visual Studio Code拡張機能のインストール
+  Visual Studio Codeを開き、`Ctrl + P（Windows/Linux）`を押してコマンドパレットを開く。<br>
+  次にコマンド`ext install ctags`を入力して、拡張機能「Ctags Support」を検索・インストールする。
 
 #### メソッド抽出方法（git-stein）
 - **General Option**で`-o`コマンドを使用して、変換後のリポジトリのパスを指定して生成する。
 - `<path/to/target-repo>`は変換後のリポジトリのパス、`<path/to/source-repo>`は変換したい元リポジトリである。
 - 注意点として、`<path/to/target-repo>`に指定する変換後のフォルダを事前に作成する必要はない。
-- **Subcommand**で`@historage-jdt`を指定して、メソッド抽出のコマンド`--no-classes --no-fields`を使用する。
+- **Subcommand**で`@historage`を指定して、メソッド抽出のコマンド`--module=method`を使用する。
 
 ```
 // コマンド
-$ java -jar git-stein.jar -o <path/to/target-repo> <path/to/source-repo> @historage-jdt --no-classes --no-fields
+$ java -jar git-stein.jar -o <path/to/target-repo> <path/to/source-repo> @historage --module=method
 
 // 例
-$ java -jar git-stein.jar -o ./Java-Snake-Game_git-stein ./Java-Snake-Game @historage-jdt --no-classes --no-fields
+$ java -jar git-stein.jar -o ./Java-Snake-Game_git-stein ./Java-Snake-Game @historage --module=method
 ```
