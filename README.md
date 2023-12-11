@@ -210,7 +210,7 @@ $ cp /path/to/git-stein/build/libs/git-stein.jar
 $ java -jar git-stein.jar [General Option] <repo> [Subcommand]
 ```
 
-3. **Subcommand**で`@historage`を使用するために、**Universal Ctags**をインストールする。
+3. **Subcommand**で`@historage`を使用するために、「**Universal Ctags**」をインストールする。
 ```
 $ sudo apt-get install universal-ctags
 ```
