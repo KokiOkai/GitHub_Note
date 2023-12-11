@@ -7,6 +7,7 @@ GitHub作業用のメモ
   - [clone](#clone)
     - [基本的な操作（git clone）](#基本的な操作git-clone)
     - [リポジトリのリンク取得方法](#リポジトリのリンク取得方法)
+    - [特定のコミットハッシュでブランチを作成しクローンする方法](#特定のコミットハッシュでブランチを作成しクローンする方法)
   - [log](#log)
     - [基本的な操作（git log）](#基本的な操作git-log)
     - [出力フォーマットのオプション指定](#出力フォーマットのオプション指定)
@@ -46,6 +47,27 @@ $ git clone https://github.com/amanhirohisa/JavaVariableExtractor.git
 1. clone対象となるリポジトリ画面から、「<> Code」を開く。<br>
 2. 「HTTPS」のweb URLを取得。<br>
 <img src="https://user-images.githubusercontent.com/105481222/228757235-0040642c-9975-4950-b0d6-ca1088985202.jpg" width="80%">
+
+#### 特定のコミットハッシュでブランチを作成しクローンする方法
+1. 対象となるリポジトリをフォークする
+2. フォークしたリポジトリをgit cloneする
+3. `cd`でクローンしたリポジトリに移動する
+4. `git checkout -b <新しいブランチ名> <コミットハッシュ>`で特定のコミットハッシュでブランチを作成する
+5. `git push origin <新しいブランチ名>`でリモートリポジトリに反映する
+6. `git clone -b <新しいブランチ名> --single-branch https://github.com/ユーザー名/元リポジトリ.git (<作成するリポジトリ名>)`
+```
+// 例
+// 手順2
+$ git clone https://github.com/KokiOkai/dubbo.git
+// 手順3
+$ cd dubbo
+// 手順4
+$ git checkout -b research 8a509e9601fab4af278859c9d947fca8f5f0fa2
+// 手順5
+$ git push origin research
+// 手順6
+$ git clone -b research --single-branch https://github.com/KokiOkai/dubbo.git
+```
 
 ### log
 gitコマンドで`log`を使用することで、過去のコミット履歴を表示することができる。
