@@ -100,7 +100,7 @@ $ cd dubbo
 | --shortstat | --stat コマンドのうち、変更/追加/削除 の行だけを表示する |
 | --name-only | コミット情報と変更されたファイルの一覧を表示する |
 | --name-status | --name-only コマンドの出力に、変更(M)/追加(A)/削除(D) の情報を追加表示する |
-| --pretty=oneline | 各コミットを1行で表示する |
+| --oneline | 各コミットを1行で表示する |
 
 #### ログ出力のフィルタリング
 コミット履歴は、期間・編集者名・ファイル名・ディレクトリ名などでフィルタリングすることができる。
@@ -217,7 +217,7 @@ $ sudo apt-get install universal-ctags
 
 4. Visual Studio Code拡張機能をインストールする。<br>
   Visual Studio Codeを開き、`Ctrl + P (Windows/Linux)`を押してコマンドパレットを開く。<br>
-  次にコマンド`ext install ctags`を入力して、拡張機能**Ctags Support**を検索・インストールする。
+  次にコマンド`ext install ctags`を入力して、拡張機能「**Ctags Support**」を検索・インストールする。
 
 #### メソッド抽出方法（git-stein）
 - **General Option**で`-o`コマンドを使用して、変換後のリポジトリのパスを指定して生成する。
