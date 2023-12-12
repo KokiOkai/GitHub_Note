@@ -259,3 +259,13 @@ $ java -jar git-stein.jar -o <path/to/target-repo> <path/to/source-repo> @histor
 // 例
 $ java -jar git-stein.jar -o ./Java-Snake-Game_git-stein ./Java-Snake-Game @historage --module=method
 ```
+
+- 対象とするプロジェクトのサイズが大きい場合、Javaのヒープ領域不足（Java heap space）のエラーが発生することがある。
+- エラー文：`Exception in thread "main" java.lang.OutOfMemoryError: Java heap space`
+- エラーを回避するには、Javaのヒープ領域のサイズを拡張するコマンドを入れる。
+
+```
+// 例
+$ java -Xmx3g -jar git-stein.jar -o ./Java-Snake-Game_git-stein ./Java-Snake-Game @historage --module=method
+```
+
