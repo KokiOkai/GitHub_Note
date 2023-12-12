@@ -119,12 +119,12 @@ $ cd dubbo
 gitコマンドをターミナルで実行する場合とコード上で実行する場合で記法が異なる。<br>
 - ターミナル
 ```
-〇：git log --oneline --grep="fix\|bug\|defect\|patch" -i
-〇：git log --oneline --grep='fix\|bug\|defect\|patch' -i
-✕：git log --oneline --grep=fix|bug|defect|patch -i
-✕：git log --oneline --grep=fix\|bug\|defect\|patch -i
-✕：git log --oneline --grep='fix|bug|defect|patch' -i
-✕：git log --oneline --grep="fix|bug|defect|patch" -i
+〇：$ git log --oneline --grep="fix\|bug\|defect\|patch" -i
+〇：$ git log --oneline --grep='fix\|bug\|defect\|patch' -i
+✕：$ git log --oneline --grep=fix|bug|defect|patch -i
+✕：$ git log --oneline --grep=fix\|bug\|defect\|patch -i
+✕：$ git log --oneline --grep='fix|bug|defect|patch' -i
+✕：$ git log --oneline --grep="fix|bug|defect|patch" -i
 ```
 - Pythonコード（subprocess.run）
 ```
@@ -269,3 +269,9 @@ $ java -jar git-stein.jar -o ./Java-Snake-Game_git-stein ./Java-Snake-Game @hist
 $ java -Xmx3g -jar git-stein.jar -o ./Java-Snake-Game_git-stein ./Java-Snake-Game @historage --module=method
 ```
 
+- Javaのヒープ領域はコマンドで確認できる。
+- **InitialHeapSize**が初期ヒープサイズで、**MaxHeapSize**が最大ヒープサイズである。
+
+```
+$ java -XX:+PrintFlagsFinal -version | grep HeapSize
+```
