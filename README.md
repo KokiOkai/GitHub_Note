@@ -12,6 +12,7 @@ GitHub作業用のメモ
     - [基本的な操作（git log）](#基本的な操作git-log)
     - [出力フォーマットのオプション指定](#出力フォーマットのオプション指定)
     - [ログ出力のフィルタリング](#ログ出力のフィルタリング)
+    - [--grepを使うときの注意点](#--grepを使うときの注意点)
 - [Linux コマンド](#Linux-コマンド)
   - [ディレクトリ操作](#ディレクトリ操作)
   - [ファイル検索](#ファイル検索)
@@ -113,6 +114,30 @@ $ cd dubbo
 | --author="(名前)" | 編集者名から指定した名前にマッチするコミットを表示 |
 | --grep="(文字列)" | 指定した文字列がコミットメッセージに含まれているコミットを表示 |
 | -S"(文字列)" | 指定した文字列をコードに追加・削除したコミットを表示 |
+
+#### --grepを使うときの注意点
+gitコマンドをターミナルで実行する場合とコード上で実行する場合で記法が異なる。
+```
+// ターミナル
+〇：git log --oneline --grep="fix\|bug\|defect\|patch" -i
+〇：git log --oneline --grep='fix\|bug\|defect\|patch' -i
+✕：git log --oneline --grep=fix|bug|defect|patch -i
+✕：git log --oneline --grep=fix\|bug\|defect\|patch -i
+✕：git log --oneline --grep='fix|bug|defect|patch' -i
+✕：git log --oneline --grep="fix|bug|defect|patch" -i
+
+// Pythonコード（subprocess.run）
+〇：git_command = ['git', 'log', '--oneline', '--grep=fix\|bug\|defect\|patch', '-i']
+〇：git_command = ['git', 'log', '--oneline', '--grep=fix\\|bug\\|defect\\|patch', '-i']
+✕：git_command = ['git', 'log', '--oneline', '--grep="fix|bug|defect|patch"', '-i']
+✕：git_command = ['git', 'log', '--oneline', '--grep="fix\|bug\|defect\|patch"', '-i']
+✕：git_command = ['git', 'log', '--oneline', '--grep="fix\\|bug\\|defect\\|patch"', '-i']
+git_result = subprocess.run(git_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=git_directory, check=True, text=True)
+
+// 補足（shell=Trueにすると、subprocessでもターミナルと同様に動く）
+git_command = 'git log --oneline --grep="fix\|bug\|defect\|patch" -i'
+git_result = subprocess.run(git_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=git_directory, check=True, text=True, shell=True) 
+```
 
 
 ## Linux コマンド
