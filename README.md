@@ -116,25 +116,27 @@ $ cd dubbo
 | -S"(文字列)" | 指定した文字列をコードに追加・削除したコミットを表示 |
 
 #### --grepを使うときの注意点
-gitコマンドをターミナルで実行する場合とコード上で実行する場合で記法が異なる。
+gitコマンドをターミナルで実行する場合とコード上で実行する場合で記法が異なる。<br>
+- ターミナル
 ```
-// ターミナル
 〇：git log --oneline --grep="fix\|bug\|defect\|patch" -i
 〇：git log --oneline --grep='fix\|bug\|defect\|patch' -i
 ✕：git log --oneline --grep=fix|bug|defect|patch -i
 ✕：git log --oneline --grep=fix\|bug\|defect\|patch -i
 ✕：git log --oneline --grep='fix|bug|defect|patch' -i
 ✕：git log --oneline --grep="fix|bug|defect|patch" -i
-
-// Pythonコード（subprocess.run）
+```
+- Pythonコード（subprocess.run）
+```
 〇：git_command = ['git', 'log', '--oneline', '--grep=fix\|bug\|defect\|patch', '-i']
 〇：git_command = ['git', 'log', '--oneline', '--grep=fix\\|bug\\|defect\\|patch', '-i']
 ✕：git_command = ['git', 'log', '--oneline', '--grep="fix|bug|defect|patch"', '-i']
 ✕：git_command = ['git', 'log', '--oneline', '--grep="fix\|bug\|defect\|patch"', '-i']
 ✕：git_command = ['git', 'log', '--oneline', '--grep="fix\\|bug\\|defect\\|patch"', '-i']
 git_result = subprocess.run(git_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=git_directory, check=True, text=True)
-
-// 補足（shell=Trueにすると、subprocessでもターミナルと同様に動く）
+```
+- 補足（shell=Trueにすると、subprocessでもターミナルと同様に動く）
+```
 git_command = 'git log --oneline --grep="fix\|bug\|defect\|patch" -i'
 git_result = subprocess.run(git_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=git_directory, check=True, text=True, shell=True) 
 ```
