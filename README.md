@@ -182,19 +182,19 @@ C:\Users\Owner\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc
 2. コマンドプロンプトを起動する（WSLを起動している場合は閉じる）
 3. WSLを停止する
 
-```PowerShell
+```
 C:\Users\Owner> wsl --shutdown
 ```
 
 4. diskpartを起動する
 
-```PowerShell
+```
 C:\Users\Owner> diskpart
 ```
 
 5. 仮想ディスクの選択・圧縮 
 
-```PowerShell
+```
 DISKPART> select vdisk file="C:\Users\Owner\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState\ext4.vhdx"
 
 	DiskPart により、仮想ディスク ファイルが選択されました。
