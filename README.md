@@ -194,7 +194,7 @@ C:\Users\Owner> diskpart
 
 5. 仮想ディスクの選択・圧縮 
 
-```
+```PowerShell
 DISKPART> select vdisk file="C:\Users\Owner\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState\ext4.vhdx"
 
 	DiskPart により、仮想ディスク ファイルが選択されました。
