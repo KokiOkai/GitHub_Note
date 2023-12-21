@@ -17,6 +17,8 @@ GitHub作業用のメモ
   - [ディレクトリ操作](#ディレクトリ操作)
   - [ファイル検索](#ファイル検索)
   - [テキスト処理](#テキスト処理)
+- [Ubuntu](#Ubuntu)
+  - [仮想ディスク容量の削減方法](#仮想ディスク容量の削減方法) 
 - [研究用ツール](#研究用ツール)
   - [JavaVariableExtractor](#JavaVariableExtractor)
     - [リンク（JavaVariableExtractor）](#リンクJavaVariableExtractor)
@@ -164,6 +166,43 @@ git_result = subprocess.run(git_command, stdout=subprocess.PIPE, stderr=subproce
 | head (ファイル) -(行数) | ファイルの先頭指定行数を表示 |
 | tail (ファイル) | ファイルの末尾10行を表示 |
 | tail (ファイル) -(行数) | ファイルの末尾指定行数を表示 |
+
+
+## Ubuntu
+### 仮想ディスク容量の削減方法
+1. 仮想ディスク（VHD）ファイルのパスを確認する<br>
+  ファイルエクスプローラーで「表示」にある「隠しファイル」にチェックを入れると、以下の場所に仮想ディスクがある。<br>
+  プロパティを見て特にサイズの大きいものを辿れば見つかる。
+
+```
+// 仮想ディスク（VHD）ファイルのパス
+C:\Users\Owner\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState\ext4.vhdx
+```
+
+2. コマンドプロンプトを起動する（WSLを起動している場合は閉じる）
+3. WSLを停止する
+
+```PowerShell
+C:\Users\Owner> wsl --shutdown
+```
+
+4. diskpartを起動する
+
+```PowerShell
+C:\Users\Owner> diskpart
+```
+
+5. 仮想ディスクの選択・圧縮 
+
+```
+DISKPART> select vdisk file="C:\Users\Owner\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState\ext4.vhdx"
+
+	DiskPart により、仮想ディスク ファイルが選択されました。
+DISKPART> compact vdisk
+
+	100% 完了しました
+DISKPART> exit
+```
 
 
 ## 研究用ツール
