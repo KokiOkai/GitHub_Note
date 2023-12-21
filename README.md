@@ -182,13 +182,13 @@ C:\Users\Owner\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc
 2. コマンドプロンプトを起動する（WSLを起動している場合は閉じる）
 3. WSLを停止する
 
-```
+```Shell
 C:\Users\Owner> wsl --shutdown
 ```
 
 4. diskpartを起動する
 
-```
+```Batch
 C:\Users\Owner> diskpart
 ```
 
