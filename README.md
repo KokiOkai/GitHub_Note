@@ -38,7 +38,7 @@ GitHub作業用のメモ
 gitコマンドで`clone`を使用することで、リポジトリをローカルのディレクトリにクローンしてくることができる。
 
 #### 基本的な操作（git clone）
-```ShellSession
+```Java Properties
 // コマンド
 $ git clone <git web URL>
 
@@ -58,7 +58,7 @@ $ git clone https://github.com/amanhirohisa/JavaVariableExtractor.git
 4. `git checkout -b <新しいブランチ名> <コミットハッシュ>`で特定のコミットハッシュでブランチを作成する
 5. `git push origin <新しいブランチ名>`でリモートリポジトリに反映する
 6. `git clone -b <新しいブランチ名> --single-branch https://github.com/ユーザー名/元リポジトリ.git (<作成するリポジトリ名>)`
-```ShellSession
+```Java Properties
 // 例
 // 手順2
 $ git clone https://github.com/KokiOkai/dubbo.git
@@ -78,7 +78,7 @@ gitコマンドで`log`を使用することで、過去のコミット履歴を
 #### 基本的な操作（git log）
 コミット履歴を表示したいリポジトリに移動して実行する。
 
-```ShellSession
+```Java Properties
 // コマンド
 $ git log
 
