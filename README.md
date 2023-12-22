@@ -38,7 +38,7 @@ GitHub作業用のメモ
 gitコマンドで`clone`を使用することで、リポジトリをローカルのディレクトリにクローンしてくることができる。
 
 #### 基本的な操作（git clone）
-```Java Properties
+```ApacheConf
 // コマンド
 $ git clone <git web URL>
 
@@ -58,7 +58,7 @@ $ git clone https://github.com/amanhirohisa/JavaVariableExtractor.git
 4. `git checkout -b <新しいブランチ名> <コミットハッシュ>`で特定のコミットハッシュでブランチを作成する
 5. `git push origin <新しいブランチ名>`でリモートリポジトリに反映する
 6. `git clone -b <新しいブランチ名> --single-branch https://github.com/ユーザー名/元リポジトリ.git (<作成するリポジトリ名>)`
-```Java Properties
+```ApacheConf
 // 例
 // 手順2
 $ git clone https://github.com/KokiOkai/dubbo.git
@@ -78,7 +78,7 @@ gitコマンドで`log`を使用することで、過去のコミット履歴を
 #### 基本的な操作（git log）
 コミット履歴を表示したいリポジトリに移動して実行する。
 
-```Java Properties
+```ApacheConf
 // コマンド
 $ git log
 
@@ -120,7 +120,7 @@ $ cd dubbo
 #### --grepを使うときの注意点
 gitコマンドをターミナルで実行する場合とコード上で実行する場合で記法が異なる。<br>
 - ターミナル
-```ShellSession
+```ApacheConf
 〇：$ git log --oneline --grep="fix\|bug\|defect\|patch" -i
 〇：$ git log --oneline --grep='fix\|bug\|defect\|patch' -i
 ✕：$ git log --oneline --grep=fix|bug|defect|patch -i
@@ -129,7 +129,7 @@ gitコマンドをターミナルで実行する場合とコード上で実行�
 ✕：$ git log --oneline --grep="fix|bug|defect|patch" -i
 ```
 - Pythonコード（subprocess.run）
-```ShellSession
+```ApacheConf
 〇：git_command = ['git', 'log', '--oneline', '--grep=fix\|bug\|defect\|patch', '-i']
 〇：git_command = ['git', 'log', '--oneline', '--grep=fix\\|bug\\|defect\\|patch', '-i']
 ✕：git_command = ['git', 'log', '--oneline', '--grep="fix|bug|defect|patch"', '-i']
@@ -138,7 +138,7 @@ gitコマンドをターミナルで実行する場合とコード上で実行�
 git_result = subprocess.run(git_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=git_directory, check=True, text=True)
 ```
 - 補足（shell=Trueにすると、subprocessでもターミナルと同様に動く）
-```ShellSession
+```ApacheConf
 git_command = 'git log --oneline --grep="fix\|bug\|defect\|patch" -i'
 git_result = subprocess.run(git_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=git_directory, check=True, text=True, shell=True) 
 ```
@@ -174,7 +174,7 @@ git_result = subprocess.run(git_command, stdout=subprocess.PIPE, stderr=subproce
   ファイルエクスプローラーで「表示」にある「隠しファイル」にチェックを入れると、以下の場所に仮想ディスクがある。<br>
   プロパティを見て特にサイズの大きいものを辿れば見つかる。
 
-```ShellSession
+```ApacheConf
 // 仮想ディスク（VHD）ファイルのパス
 C:\Users\Owner\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState\ext4.vhdx
 ```
@@ -182,19 +182,19 @@ C:\Users\Owner\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc
 2. コマンドプロンプトを起動する（WSLを起動している場合は閉じる）
 3. WSLを停止する
 
-```ShellSession
+```ApacheConf
 C:\Users\Owner> wsl --shutdown
 ```
 
 4. diskpartを起動する
 
-```ShellSession
+```ApacheConf
 C:\Users\Owner> diskpart
 ```
 
 5. 仮想ディスクの選択・圧縮 
 
-```ShellSession
+```ApacheConf
 DISKPART> select vdisk file="C:\Users\Owner\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState\ext4.vhdx"
 
 	DiskPart により、仮想ディスク ファイルが選択されました。
@@ -214,7 +214,7 @@ GitHubリンク：[https://github.com/amanhirohisa/JavaVariableExtractor](https:
 1. リポジトリに公開されているjavaファイルをまとめた「jarファイル」を、Visual Studio Codeにダウンロードする。<br>
 2. コマンドを実行
 
-```ShellSession
+```ApacheConf
 // コマンド「-v」：コマンドラインに処理内容を表示する
 $ sudo java -jar JavaVariableExtractor.jar -v <java-file | java-file-directory>
 
@@ -231,7 +231,7 @@ UNIXコマンドによって、標準出力をファイルに書き出す。
 | 2> | (コマンド) 2> (ファイル) | コマンドの結果（標準エラー出力）をファイルに書き出す |
 | &> | (コマンド) &> (ファイル) | コマンドの結果（標準出力、標準エラー出力）をファイルに書き出す |
 
-```ShellSession
+```ApacheConf
 // コマンド
 $ sudo java -jar JavaVariableExtractor.jar <java-file | java-file-directory> &> <保存先の指定・保存するファイル名・識別子>
 
@@ -247,7 +247,7 @@ GitHubリンク：[https://github.com/tsantalis/RefactoringMiner](https://github
 1. ホームディレクトリからzipファイルを解凍した場所まで指定または移動して、`sudo`でコマンドを実行。<br>
 2. コマンド`-a <git-repo-folder> <branch> -json <path-to-json-file>`を実行。
 
-```ShellSession
+```ApacheConf
 // 例
 $ sudo ./RefactoringMiner/build/distributions/RefactoringMiner-2.3.2/bin/RefactoringMiner -a dubbo 3.2 -json ./test.json
 ```
@@ -258,7 +258,7 @@ GitHubリンク：[https://github.com/sh5i/git-stein](https://github.com/sh5i/gi
 
 #### 基本的な使い方（git-stein）
 1. クローンしてからbuildする必要がある。
-```ShellSession
+```ApacheConf
 // プロジェクト「git-stein」をcloneする
 $ git clone https://github.com/sh5i/git-stein.git
 // プロジェクト「git-stein」に移動
@@ -270,12 +270,12 @@ $ cp /path/to/git-stein/build/libs/git-stein.jar
 ```
 
 2. 「git-stein」のコマンドは、**General Option**と**Subcommand**を指定して実行する。
-```ShellSession
+```ApacheConf
 $ java -jar git-stein.jar [General Option] <repo> [Subcommand]
 ```
 
 3. **Subcommand**で`@historage`を使用するために、「**Universal Ctags**」をインストールする。
-```ShellSession
+```ApacheConf
 $ sudo apt-get install universal-ctags
 ```
 
@@ -289,7 +289,7 @@ $ sudo apt-get install universal-ctags
 - 注意点として、`<path/to/target-repo>`に指定する変換後のフォルダを事前に作成する必要はない。
 - **Subcommand**で`@historage`を指定して、メソッド抽出のコマンド`--module=method`を使用する。
 
-```ShellSession
+```ApacheConf
 // コマンド
 $ java -jar git-stein.jar -o <path/to/target-repo> <path/to/source-repo> @historage --module=method
 
@@ -301,7 +301,7 @@ $ java -jar git-stein.jar -o ./Java-Snake-Game_git-stein ./Java-Snake-Game @hist
 - エラー文：`Exception in thread "main" java.lang.OutOfMemoryError: Java heap space`
 - エラーを回避するには、Javaのヒープ領域のサイズを拡張するコマンドを入れる。
 
-```ShellSession
+```ApacheConf
 // 例
 $ java -Xmx3g -jar git-stein.jar -o ./Java-Snake-Game_git-stein ./Java-Snake-Game @historage --module=method
 ```
@@ -309,6 +309,6 @@ $ java -Xmx3g -jar git-stein.jar -o ./Java-Snake-Game_git-stein ./Java-Snake-Gam
 - Javaのヒープ領域はコマンドで確認できる。
 - **InitialHeapSize**が初期ヒープサイズで、**MaxHeapSize**が最大ヒープサイズである。
 
-```
+```ApacheConf
 $ java -XX:+PrintFlagsFinal -version | grep HeapSize
 ```
